@@ -1,0 +1,96 @@
+<?page title="用户登录" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>
+		body {
+			margin:0;
+			padding:0;
+		}
+		.div { 
+			margin:0; 
+			padding:0;
+		}
+		.center_main{
+			position:static;
+			background:url('images/loginbackground.png');
+			background-repeat:no-repeat;
+			background-size:cover;
+			padding-top:200px;
+		}
+		.inputbox {
+			width:480px;
+			height:320px;
+			margin:0 auto;
+			position:relative;
+			background:url("images/inputback1.png");
+			background-repeat:no-repeat;
+			 background-size:cover;
+			
+			 
+		}
+		.input_content{
+			width:400px;
+			height:300px;
+			position:absolute;
+			left:15%;
+			top:25%;
+			-border:1px solid red;
+		}
+	</style>
+	<borderlayout height="100%">
+		<center border="none" >
+			<div height="100%" sclass="center_main" apply="org.zkoss.bind.BindComposer"
+			viewModel="@id('vm') @init('cn.annual.ticket.viewmodel.UserLoginViewModel')" >
+				<div sclass="inputbox">
+<!-- 					<div id="content" sclass="input_content"> -->
+									<vbox sclass="input_content">
+										<hbox>
+											<label value="用户账户:" style="font-size:20px;color:white;"></label>
+											<textbox id="user_count"  ctrlKeys="^a#f8"  style="font-size:20px;"
+												width="200px" value="">
+												<attribute name="onOK"><![CDATA[
+													user_passwd.focus();
+												]]></attribute>
+											</textbox>
+										</hbox>
+		
+										<hbox>
+											<label value="用户密码:" style="font-size:20px;color:white;"></label>
+											<textbox type="password"  style="font-size:20px;"
+												id="user_passwd" width="200px"
+												value="">
+												<attribute name="onOK"><![CDATA[
+													user_validate.focus();
+												]]></attribute>
+											</textbox>
+										</hbox>
+										<vbox>
+											<hbox>
+												<label value="验证字符:" style="font-size:20px;color:white;"></label>
+												<textbox id="user_validate" style="font-size:20px;"
+													width="80px" value="">
+<!-- 													@bind(vmlogin.inputValidate) -->
+													<attribute name="onOK"><![CDATA[
+													login_button.focus();
+												]]></attribute>
+												</textbox>
+												<captcha
+												value="@load(vm.randString)" bgColor="#00ff00"
+												fontColor="#010002" width="115px" height="30px"
+												onClick="@command('regenerate')" />
+											</hbox>
+											
+										</vbox>
+										<hbox style="text-align:center;"
+											width="212px">
+											<button id="login_button" label="登录系统"
+												style="margin-left:100px;margin-top:20px;height:50px;background:url('images/login_bt.png');font-size:24px;color:white;" 
+												onClick="@command('login',acount=user_count.value,pd=user_passwd.value,rand=user_validate.value)">
+											</button>
+										</hbox>
+									</vbox>
+<!-- 								</div> -->
+				</div>
+			</div>
+		</center>
+	</borderlayout>
+</zk>
