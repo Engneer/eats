@@ -32,7 +32,7 @@
 		   jq("$txmasked").val("99.999.999");
 		}
 		function testjsf(){
-		//alert("调用js陈宫");
+		
 		jq("$txmasked").click(function(){
 			jq("$txmasked").val("99.999.999");
 		});
