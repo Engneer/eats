@@ -1,0 +1,52 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<borderlayout height="100%"  style="background-image:url('images/top_bg.jpg');border:red;">
+			   <north vflex="true">
+				   	<div id="left_menubar_div">
+				   		<menubar id="menubar" width="100%">
+							<menuitem label="@load(vm.user_info)" image="images/user.png"></menuitem>
+<!-- 				   			<menuitem></menuitem> -->
+<!-- 							<menuitem label="首页" image="images/home.png" style="margin-left:20%;"/> 	 -->
+<!-- 							<menuitem label="@load(vm.schedule_info)" image="images/task.png" onClick="@command('schedule')"/> 	 -->
+<!-- 							<menuitem label="修改密码" image="images/lock.png" onClick="@command('changepasswd',pd_choice='menubar_pd')"/> 	 -->
+<!-- 							<menu label="界面风格" image="images/style.png"> -->
+<!-- 								<menupopup> -->
+<!-- 									<menuitem label="Breeze(默认)"/> -->
+<!-- 									<menuitem label="sapphire"/> -->
+<!-- 									<menuitem label="sivertail"/>	 -->
+<!-- 								</menupopup> -->
+<!-- 							</menu>	 -->
+<!-- 							<menuitem label="帮助" image="images/help.png" /> 	 -->
+<!-- 							<menuitem label="退出系统" image="images/logout.png" onClick="@command('exit_system')"/>	 -->
+						</menubar>
+				   	</div>				
+			   </north>
+			   <center vflex="true"  id="blcenter">
+<!-- 			   border="normal" -->
+			   	<groupbox  height="100%">
+			   				<tabbox id="tabbox_1" height="100%">
+								   <tabs id="titleTabs">
+									   	<tab label="欢迎界面" closable="true"></tab>
+								   </tabs>
+									<tabpanels id="contentTabpanels">
+										<tabpanel style="background:url('images/welcome.png');background-position:50% 30%;background-repeat:no-repeat;"></tabpanel>
+									</tabpanels>				   
+							</tabbox>
+				</groupbox>
+			   </center>
+<!-- 			   border="normal" title="用户菜单" splittable="true"collapsible="true"-->
+			   <west vflex="true" size="12%"   >
+						<groupbox id="treegb" height="100%" closable="true" mold='3d'>
+						<tree id="user_menu" height="100%" model="@load(vm.tree_model)">
+							<template name="model">
+						        <treeitem id="${each.data.treeitemid}">
+						            <treerow>
+						                <treecell label="${each.data.path}"/>
+						            </treerow>
+						        </treeitem>
+					    </template>
+						</tree>
+					</groupbox>
+			   </west>
+			</borderlayout>
+</zk>
