@@ -1,0 +1,89 @@
+<!-- <?script  type="text/javascript" src="assets/js/jquery-1.9.1.min.js"?> -->
+<!-- <?script  type="text/javascript" src="assets/webcam/webcam.js"?> -->
+<!-- <?script  type="text/javascript" src="assets/fancybox/jquery.fancybox-1.3.4.pack.js"?> -->
+<!-- <?script  type="text/javascript" src="assets/fancybox/jquery.easing-1.3.pack.js"?> -->
+<!-- <?script  type="text/javascript" src="assets/js/script.js"?> -->
+
+
+<zk>
+
+<!-- <body> -->
+	<div id="reg_annual_ticket" xmlns:n="native" 
+xmlns:x="http://www.zkoss.org/2005/zul" 
+xmlns:zk="http://www.zkoss.org/2005/zk">
+
+<!-- 			<n:link rel="stylesheet" type="text/css" href="assets/css/styles.css" />  -->
+<!--  			<n:link rel="stylesheet" type="text/css" href="assets/fancybox/jquery.fancybox-1.3.4.css" />  -->
+			
+			
+			<n:div style="border:1px solid red;positon:relative;">
+			<n:div id="camera">
+				<!-- <span class="tooltip"></span> -->
+				<n:div class="camTop"></n:div>
+			    <n:div id="screen">
+			    	
+			    </n:div>
+			    <n:div id="buttons">
+			    	<n:div class="buttonPane">
+			        	<n:a id="shootButton" href="" class="blueButton">拍照</n:a>
+			        </n:div>
+			        <n:div class="buttonPane hidden">
+			        	<n:a id="cancelButton" href="" class="blueButton">取消</n:a> <n:a id="uploadButton" href="" class="greenButton">确定</n:a>
+			        </n:div>
+			    </n:div>
+			    <n:div class="settings"></n:div>
+			</n:div>
+			<n:div id="photos_content">
+				<n:div id="photos">
+				</n:div>
+				<x:vbox style="margin:10px auto auto;">
+					<x:hbox>
+						<x:label value="游客卡号:"></x:label>
+						<x:textbox/>
+					</x:hbox>
+					<x:hbox>
+						<x:label value="游客姓名:"></x:label>
+						<x:textbox/>
+					</x:hbox>
+					<x:hbox>
+						<x:label value="游客性别:"></x:label>
+						<x:radiogroup><x:radio label="男"/><x:radio label="女"/></x:radiogroup>
+					</x:hbox>
+					<x:hbox>
+						<x:label value="身份证件:"></x:label>
+						<x:textbox></x:textbox>
+					</x:hbox>
+					<x:hbox>
+						<x:label value="电话号码:"></x:label>
+						<x:textbox></x:textbox>
+					</x:hbox>
+					<x:hbox>
+						<x:label value="票卡类型:"></x:label>
+						<x:textbox></x:textbox>
+					</x:hbox>
+					<x:hbox>
+						<x:button label="提交"></x:button>
+						<x:button label="重置"></x:button>
+					</x:hbox>
+				</x:vbox>
+			</n:div>
+			</n:div>
+<!-- 					<html> -->
+<!--  			<script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script> -->
+<!--  			<script type="text/javascript" src="assets/fancybox/jquery.easing-1.3.pack.js"></script> -->
+<!--  			<script type="text/javascript" src="assets/fancybox/jquery.fancybox-1.3.4.pack.js"></script> -->
+<!--  			<script type="text/javascript" src="assets/webcam/webcam.js"></script> -->
+<!-- 			<n:script src="assets/js/script.js"></script>  -->
+<!--  			<script type="text/javascript" src="assets/js/script.js"> </script> -->
+			
+<!--  			</html> -->
+	<button visible="false">
+	<attribute name="onCreate">
+		<![CDATA[
+		         Clients.evalJavaScript("ready();");
+		]]>
+		</attribute>
+	</button>
+	</div>
+<!-- 	</body> -->
+</zk>

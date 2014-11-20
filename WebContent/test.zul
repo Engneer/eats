@@ -1,0 +1,42 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?script type="text/javascript" src="assets/js/test.js"?>
+<!-- load .css file under WebContent -->
+<?link  rel="stylesheet" type="text/css" href="assets/css/test.css"?>
+<zk xmlns:n="native">
+    <!-- a native (pure html) button,
+        apply custom css style,
+        call the custom js function when clicked-->
+    <n:button class="custom-button"
+        onclick="customjs.sayHello('Ben');">
+        test
+    </n:button>
+    <window>
+   <hbox>
+      Masked input: <textbox id="txmasked" >
+      	<attribute name="onCreate">
+      		<![CDATA[
+      			Clients.evalJavaScript("testjsf();");
+      			//Clients.evalJavaScript("text();");
+      		]]>
+      	</attribute>
+      </textbox>
+   </hbox>
+   <script src="assets/js/jquery-1.9.1.js" type="text/javascript"/>
+<!--    <script src="/app/resources/scripts/jquery.maskedinput-1.2.2.js" type="text/javascript"/> -->
+   <script>
+	//jQuery.noConflict();
+        jq().ready(function(){
+		   jq("$txmasked").val("99.999.999");
+		});
+		function text(){
+		   jq("$txmasked").val("99.999.999");
+		}
+		function testjsf(){
+		//alert("调用js陈宫");
+		jq("$txmasked").click(function(){
+			jq("$txmasked").val("99.999.999");
+		});
+	}
+   </script>
+</window>
+</zk>
