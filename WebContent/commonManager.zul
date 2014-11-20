@@ -1,0 +1,68 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?script  type="text/javascript" src="assets/js/jquery-1.9.1.min.js"?>
+<?script  type="text/javascript" src="assets/webcam/webcam.js"?>
+<?script  type="text/javascript" src="assets/fancybox/jquery.fancybox-1.3.4.pack.js"?>
+<?script  type="text/javascript" src="assets/fancybox/jquery.easing-1.3.pack.js"?>
+<?script  type="text/javascript" src="assets/js/script.js"?>
+<?link rel="stylesheet" type="text/css" href="assets/css/styles.css" ?> 
+<?link rel="stylesheet" type="text/css" href="assets/fancybox/jquery.fancybox-1.3.4.css" ?> 
+
+<zk>
+<style>
+	body {
+		margin:0;
+		padding:0;
+	}
+	.window_main{
+		margin:0;
+		padding:0;
+	}
+	.user_menu {
+		margin-top:10px;
+		margin-left:20px;
+	}
+	.user_menu a {
+		font-size:20px;
+		text-decoration:none;
+		color:black;
+		display:block;
+	}
+	.center_content{
+		padding-top:20px;
+		padding-left:20px;
+		width:100%;
+		height:100%;
+		border:1px solid red;
+	}
+</style>
+<!-- 	<window width="100%" height="100%" sclass="window_main" border="0"> -->
+		<borderlayout height="100%" sclass="bl_main" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('cn.annual.ticket.viewmodel.CommonManagerViewModel')">
+			   <north height="93px" style="background:url('images/m_bg_top.png');background-size:cover;" border="0">			
+			   </north>
+			   <center  border="0"  id="blcenter"  style="background:url('images/m_bg_right2.png');background-size:cover;">
+					<div id="center_div" sclass="center_content">
+						
+					</div>
+			   </center>
+			   <west width="183px"  border="0"   style="background:url('images/m_bg_left.png');background-size:cover;" >
+					<div>
+						<div id="title"
+						 style="width=183px;font-size:20px;color:black;height:40px;background:url('images/user_menu_bg1.png');background-size:cover;margin:0;padding-top:10px;" >
+						 	<label  style="text-align:center;margin-left:35px;font-size:20px">用户菜单</label>
+						 </div>
+						<div id="menu" sclass="user_menu">
+							<button  orient="vertical" width="100px"  image="images/add_button.png" style="border:0;" onClick="@command('regAnnualTicket',param='reg_annual_ticket')">办理年票卡</button>
+							<button  orient="vertical" width="100px"  image="images/check.png" style="border:0;margin-top:10px;">游客验票</button>
+							<button  orient="vertical" width="100px"  image="images/xufei.png" style="border:0;margin-top:10px;">续费充值</button>
+							<button  orient="vertical" width="100px"  image="images/dataanalysis.png" style="border:0;margin-top:10px;">换卡</button>
+							<button  orient="vertical" width="100px" image="images/edit.png" style="border:0;margin-top:10px;">挂失</button>
+							<button  orient="vertical" width="100px" image="images/del_button.png" style="border:0;margin-top:10px;">报废年票卡</button>
+						</div>
+					</div>
+			   </west>
+			</borderlayout>
+
+<!-- 	</window> -->
+
+
+</zk>

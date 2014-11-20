@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+       
+        
+<!--       <bean id="datSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  -->
+<!--            <property name="driverClassName" value="com.informix.jdbc.IfxDriver"></property>  -->
+<!--            <property name="url" value="jdbc:informix-sqli://192.168.10.3:9090/elite_mis:informixserver=on_js22c;DB_LOCALE=en_us.819;CLIENT_LOCALE=en_us.57372;NEWCODESET=GBK,8859-1,819"></property>-->  
+<!--            <property name="username" value="informix"></property>  -->
+<!--            <property name="password" value="informix"></property>  -->
+            
+<!--        </bean>-->
+        <bean id="datSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+            <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>  
+            <property name="url" value="jdbc:mysql://localhost/eats?useUnicode=true&amp;characterEncoding=UTF-8"></property>  
+            <property name="username" value="root"></property>  
+            <property name="password" value="123"></property>  
+            
+        </bean>
+         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+       	 	<property name="configLocation" value="classpath:mybatisconfig.xml"/>
+        	<property name="dataSource" ref="datSource" />  
+    	</bean>
+
+
+<!-- 		自动扫面接口口注入 -->
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<property name="basePackage" value="cn.annual.ticket.service" />
+			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		</bean>
+
+    	
+<!-- 		 <bean id="iProductDao" class="org.mybatis.spring.mapper.MapperFactoryBean"> -->
+<!-- 		      <property name="mapperInterface" value="com.lyy.songxg.service.IProductDao"></property>   -->
+<!-- 		      <property name="sqlSessionFactory" ref="sqlSessionFactory"></property> -->
+<!-- 		 </bean>   -->
+<!-- 		  <bean id="UserDao" class="org.mybatis.spring.mapper.MapperFactoryBean"> -->
+<!-- 		      <property name="mapperInterface" value="com.lyy.songxg.service.IUserDao"></property>   -->
+<!-- 		      <property name="sqlSessionFactory" ref="sqlSessionFactory"></property> -->
+<!-- 		 </bean>  -->
+<!-- 		 <bean id="productService" class="com.lyy.songxg.service.ProductServiceImpl"></bean> -->
+<!-- 		 <bean id="userService" class="com.lyy.songxg.service.UserServiceImpl"></bean> -->
+		 
+		 
+  
+<!-- 	    <bean id="productService" class="com.lyy.songxg.service.ProductServiceImpl">   -->
+<!-- 	        <property name="iProductDao" ref="productDao"></property>   -->
+<!-- 	    </bean>   -->
+<!-- 	    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">   -->
+<!-- 		        <property name="mapperInterface" value="com.mybatis.UserDao"></property>   -->
+<!-- 		        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property> -->
+<!-- 		   </bean>   -->
+  
+<!-- 	    <bean id="userService" class="com.mybatis.UserServiceImpl">   -->
+<!-- 	        <property name="userDao" ref="userDao"></property>   -->
+<!-- 	    </bean>   -->
+			<context:annotation-config></context:annotation-config>
+<!-- 			自动扫描注入 -->
+			<context:component-scan base-package="cn.annual.ticket.*"></context:component-scan>
+</beans>  
