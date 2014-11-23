@@ -1,0 +1,56 @@
+<zk>
+	<style>
+		.check_content{
+			width:710px;
+			margin:0 auto;
+		}
+		label{
+			color:black;
+		}
+	</style>
+	<div id="check_annual_ticket">
+		<div sclass="check_content">
+			<hbox>
+				<vbox style="width:300px;height:250px;border:1px solid red;"></vbox>
+				<vbox style="width:400px;height:250px;border:1px solid red;">
+					<hbox>
+						<label value="游客卡号:"  style="font-size:25px;color:black;"></label>
+						<textbox style="font-size:20px;"></textbox>
+						
+					</hbox>
+					<hbox>
+						<label value="游客姓名:"  style="font-size:25px;"></label>
+						<textbox style="font-size:20px;"></textbox>
+					</hbox>
+					<hbox>
+						<label value="游客性别:"  style="font-size:25px;"></label>
+						<textbox style="font-size:20px;"></textbox>
+						
+					
+					</hbox>
+					<hbox>
+						<label value="身份证件:"  style="font-size:25px;"></label>
+						<textbox style="font-size:20px;"></textbox>
+					</hbox>
+					<hbox >
+						<label value="年票类型:"  style="font-size:25px;"></label>
+						<textbox style="font-size:20px;"></textbox>
+						
+						
+					</hbox>
+					<hbox>
+						<label value="剩余可带:"  style="font-size:25px;"></label>
+						<textbox style="font-size:20px;"></textbox>
+						<label value="(人)" style="font-size:20px;"></label>
+					</hbox>	
+				</vbox>
+			</hbox>
+			<div>
+				<hbox style="margin:0 auto;width:100px;">
+					<button label="验证通过"></button>
+					<button label="验证失败"></button>
+				</hbox>
+			</div>
+		</div>
+	</div>
+</zk>

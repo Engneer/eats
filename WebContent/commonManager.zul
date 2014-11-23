@@ -52,7 +52,7 @@
 						 </div>
 						<div id="menu" sclass="user_menu">
 							<button  orient="vertical" width="100px"  image="images/add_button.png" style="border:0;" onClick="@command('regAnnualTicket',param='reg_annual_ticket')">办理年票卡</button>
-							<button  orient="vertical" width="100px"  image="images/check.png" style="border:0;margin-top:10px;">游客验票</button>
+							<button  orient="vertical" width="100px"  image="images/check.png" style="border:0;margin-top:10px;" onClick="@command('checkAnnualTicket',param='check_annual_ticket')">游客验票</button>
 							<button  orient="vertical" width="100px"  image="images/xufei.png" style="border:0;margin-top:10px;">续费充值</button>
 							<button  orient="vertical" width="100px"  image="images/dataanalysis.png" style="border:0;margin-top:10px;">换卡</button>
 							<button  orient="vertical" width="100px" image="images/edit.png" style="border:0;margin-top:10px;">挂失</button>

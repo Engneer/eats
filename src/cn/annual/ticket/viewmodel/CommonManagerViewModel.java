@@ -32,6 +32,12 @@ public class CommonManagerViewModel {
 		//Executions.sendRedirect("regAnnualTicket.zul");
 		
 	}
+	@Command
+	public void checkAnnualTicket(@BindingParam("param")String temp){
+		removeDirectlyChild();
+		bl_center_content_id	=	temp;
+		Executions.createComponents("checkAnnualTicket.zul", center_div, null);
+	}
 	public void removeDirectlyChild(){
 		if(bl_center_content_id != null){
 			Div div	=	(Div) center_div.getFellow(bl_center_content_id);
