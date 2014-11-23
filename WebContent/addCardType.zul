@@ -16,24 +16,24 @@
 		<vbox sclass="input_content">
 			<hbox>
 				<label value="卡类别名称:" style="font-size:20px;"></label>
-				<textbox  style="font-size:15px;"
+				<textbox id="card_type_name"  style="font-size:15px;"
 					width="200px" value="">
 				</textbox>
 			</hbox>
 			<hbox>
 				<label value="可带入人数:" style="font-size:20px;"></label>
-				<intbox  style="font-size:15px;" width="200px">
+				<intbox  id="take_in_number"  style="font-size:15px;" width="200px">
 				</intbox>
 				<label value="(人)" style="font-size:20px;"></label>
 			</hbox>
 			<hbox>
 				<label value="年票卡金额:" style="font-size:20px;"></label>
-				<intbox  style="font-size:15px;" width="200px"></intbox>
+				<intbox id="card_account"  style="font-size:15px;" width="200px"></intbox>
 				<label value="(元)" style="font-size:20px;"></label>
 			</hbox>
 			<hbox  style="width:400px;">
 				<div sclass="bt_content">
-					<button height="50px" width="100px" style="background:url('images/addreg.png');border:0;"></button>
+					<button height="50px" width="100px" style="background:url('images/addreg.png');border:0;" onClick="@command('insertCardType')"></button>
 					<button height="50px" width="100px" style="background:url('images/cancel.png');border:0;margin-left:10px;"></button>
 				</div>
 			</hbox>

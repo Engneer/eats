@@ -1,5 +1,8 @@
 package cn.annual.ticket.service;
 
-public interface ILevelInfoService {
+import cn.annual.ticket.model.LevelInfo;
 
+public interface ILevelInfoService {
+	
+	int insertCardLevel(LevelInfo levelInfo);
 }

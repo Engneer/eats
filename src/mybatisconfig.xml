@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>  
     <mappers>
         <mapper resource="cn/annual/ticket/service/UsersDao.xml"/>
+        <mapper resource="cn/annual/ticket/service/LevelInfoDao.xml"/>
     </mappers>  
         
 </configuration> 

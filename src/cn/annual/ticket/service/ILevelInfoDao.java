@@ -1,5 +1,9 @@
 package cn.annual.ticket.service;
 
-public interface ILevelInfoDao {
+import org.springframework.stereotype.Component;
 
+import cn.annual.ticket.model.LevelInfo;
+@Component("levelInfoDao")
+public interface ILevelInfoDao {
+	int insertCardLevel(LevelInfo levelInfo);
 }

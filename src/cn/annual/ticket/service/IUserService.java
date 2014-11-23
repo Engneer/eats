@@ -8,4 +8,5 @@ import cn.annual.ticket.model.Users;
 public interface IUserService {
 
 	public List<Map>	getUserList(Users users);
+	public int			insertUsers(Users users);
 }

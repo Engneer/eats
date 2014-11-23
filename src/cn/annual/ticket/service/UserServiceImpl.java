@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+
 import cn.annual.ticket.model.Users;
 
 @Service("userService")
@@ -17,6 +19,11 @@ public class UserServiceImpl implements IUserService {
 	public List<Map> getUserList(Users users) {
 		// TODO Auto-generated method stub
 		return this.iUsersDao.getUserList(users);
+	}
+	@Override
+	public int insertUsers(Users users) {
+		// TODO Auto-generated method stub
+		return this.iUsersDao.insertUsers(users);
 	}
 
 }

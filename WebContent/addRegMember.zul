@@ -22,14 +22,14 @@
 			</hbox>
 			<hbox>
 				<label value="用户账户级别:" style="font-size:20px;"></label>
-				<combobox  style="font-size:16px;">
+				<combobox id="cblevel"  style="font-size:16px;">
 					<comboitem label="1----系统人员" style="font-size:20px;"></comboitem>
 					<comboitem label="2----办证人员" style="font-size:20px;"></comboitem>
 				</combobox>
 			</hbox>
 			<hbox  style="width:400px;">
 				<div sclass="bt_content">
-					<button height="50px" width="100px" style="background:url('images/addreg.png');border:0;"></button>
+					<button height="50px" width="100px" style="background:url('images/addreg.png');border:0;" onClick="@command('insertRegMember',name=user_count.value,level=cblevel.value)"></button>
 					<button height="50px" width="100px" style="background:url('images/cancel.png');border:0;margin-left:10px;"></button>
 				</div>
 			</hbox>

@@ -4,4 +4,7 @@
 	<select id="getUserList" parameterType="cn.annual.ticket.model.Users" resultType="map">
 		select * from users where name=#{name} and password=#{password};
 	</select>
+	<insert id="insertUsers" parameterType="cn.annual.ticket.model.Users">
+		insert into users (name,password,level,islogin) values(#{name},#{password},#{level},#{islogin});
+	</insert>
 </mapper>
